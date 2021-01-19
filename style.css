@@ -28,8 +28,7 @@ input[type="text"] {
   width: 100%;
   box-sizing: border-box;
   padding: 15px;
-  position: relative;
-  top: 15px;
+  margin: 15px 0px;
   font-size: 15px;
   border: 1px solid rgba(0, 0, 0, 0.3);
 }
@@ -50,4 +49,27 @@ input[type="text"] {
 .btn-reset:before {
   font-size: 13px;
   content: "✖";
+}
+
+.content {
+  border: 1px solid #ccc;
+}
+
+ul.tabs {
+  display: flex;
+}
+
+.tabs li {
+  display: inline-block;
+  width: 50%;
+  padding: 15px;
+  text-align: center;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #999;
+}
+
+ul .active {
+  background-color: #37c1bc;
+  color: white;
 }
