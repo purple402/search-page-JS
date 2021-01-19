@@ -36,17 +36,18 @@ input[type="text"] {
 
 .btn-reset {
   position: absolute;
-  width: 25px;
-  height: 25px;
+  width: 21px;
+  height: 21px;
   border-radius: 50%;
-  top: 27px;
+  top: 30px;
   right: 10px;
   background-color: rgba(0, 0, 0, 0.3);
   color: white;
   border: none;
+  padding: 1px;
 }
 
 .btn-reset:before {
-  font-size: 15px;
+  font-size: 13px;
   content: "✖";
 }
