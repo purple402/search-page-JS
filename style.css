@@ -1,9 +1,52 @@
+body,
+ul {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+img {
+  width: 100%;
+}
+
 header {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
   padding: 15px 0px;
   text-align: center;
 }
 
 .container {
   margin: 0px 15px;
+}
+
+form {
+  position: relative;
+}
+
+input[type="text"] {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 15px;
+  position: relative;
+  top: 15px;
+  font-size: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.btn-reset {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  top: 27px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  border: none;
+}
+
+.btn-reset:before {
+  font-size: 15px;
+  content: "✖";
 }
