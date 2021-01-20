@@ -21,6 +21,7 @@ FormView.bindEvents = function() {
     // submit 기본 동작 막기
     this.on('submit', e => e.preventDefault())
     this.inputEl.addEventListener('keyup', e => this.onKeyup(e))
+    this.resetEl.addEventListener('click', e => this.onClickReset())
 }
 
 FormView.onKeyup = function(e) {
@@ -32,6 +33,10 @@ FormView.onKeyup = function(e) {
     // 엔터 눌렀을 때
     this.emit('@submit', {input: this.inputEl.value})
 }
+
+FormView.onClickReset = function() {
+    this.emit('@reset')
+    this.showResetBtn(false)
 }
 
 export default FormView
