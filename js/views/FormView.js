@@ -18,11 +18,20 @@ FormView.showResetBtn = function(show = true) {
 }
 
 FormView.bindEvents = function() {
+    // submit 기본 동작 막기
+    this.on('submit', e => e.preventDefault())
     this.inputEl.addEventListener('keyup', e => this.onKeyup(e))
 }
 
-FormView.onKeyup = function() {
+FormView.onKeyup = function(e) {
+    const enter = 13
+    // true대신 입력값의 length를 넣어 아무것도 입력되지 않았을 때 버튼 사라지도록 함
     this.showResetBtn(this.inputEl.value.length)
+    if (!this.inputEl.value.length) this.emit('@reset')
+    if (e.keyCode !== enter) return
+    // 엔터 눌렀을 때
+    this.emit('@submit', {input: this.inputEl.value})
+}
 }
 
 export default FormView
