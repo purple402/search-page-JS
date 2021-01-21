@@ -27,6 +27,7 @@ FormView.bindEvents = function() {
 FormView.onKeyup = function(e) {
     const enter = 13
     // true대신 입력값의 length를 넣어 아무것도 입력되지 않았을 때 버튼 사라지도록 함
+    // + MainController가 onResetForm 실행하도록 emit
     this.showResetBtn(this.inputEl.value.length)
     if (!this.inputEl.value.length) this.emit('@reset')
     if (e.keyCode !== enter) return
