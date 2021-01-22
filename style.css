@@ -76,8 +76,11 @@ ul .active {
 
 #search-result li {
   display: flex;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   padding: 5px 0px;
+}
+
+li {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 #search-result img {
@@ -96,4 +99,16 @@ ul .active {
   word-break: keep-all;
   font-size: 14px;
   margin-bottom: 10px;
+}
+
+#search-keyword li {
+  display: flex;
+  height: 50px;
+  align-items: center;
+}
+
+li .number {
+  font-size: 20px;
+  margin: 10px 20px;
+  color: gray;
 }
