@@ -11,6 +11,8 @@ KeywordView.setup = function(el) {
 
 KeywordView.render = function(data = []) {
     this.el.innerHTML = data.length ? this.getKeywordListHtml(data) : '추천 검색어가 없습니다'
+    // setup에서 bindClickEvent를 하면 DOM이 만들어지기 이전이므로 eventlistener가 연결되지 않는다
+    this.bindClickEvent()
     this.show()
 }
 
@@ -24,6 +26,15 @@ KeywordView.getKeywordListHtml = function(data) {
     }, '<ul>') + '</ul>'
 }
 
+KeywordView.bindClickEvent = function() {
+    Array.from(this.el.querySelectorAll('li')).forEach(li => {
+        li.addEventListener('click', e => this.onClickKeyword(e))
+    })
+}
+
+KeywordView.onClickKeyword = function(e) {
+    const {keyword} = e.currentTarget.dataset
+    this.emit('@click', {keyword})
 }
 
 export default KeywordView

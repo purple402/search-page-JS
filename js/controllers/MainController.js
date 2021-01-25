@@ -20,6 +20,7 @@ export default {
             .on('@change', e => this.changeTab(e.detail.tabName))
 
         KeywordView.setup(document.querySelector('#search-keyword'))
+            .on('@click', e => this.onClickKeyword(e.detail.keyword))
 
         this.selectedTab = '추천 검색어'
         this.renderView()
@@ -41,10 +42,12 @@ export default {
         })
     },
     search(query) {
-        //data 받아옴
+        // data 받아옴
         SearchModel.list(query).then(data => {
             this.onSearchResult(data)
         })
+        // 입력창에 단어가 입력될 수 있도록 FormView에 위임
+        FormView.setValue(query)
     },
     onSubmit(input) {
         // 검색요청
@@ -53,16 +56,19 @@ export default {
     },
     onResetForm() {
         console.log(tag, 'onResetForm()')
-        ResultView.hide()
-        TabView.show()
+        this.renderView()
     },
     onSearchResult(data) {
+        TabView.hide()
+        KeywordView.hide()
         // 검색결과 구현
         ResultView.render(data)
-        TabView.hide()
     },
     changeTab(tabName) {
         this.selectedTab = tabName
         this.renderView()
+    },
+    onClickKeyword(keyword) {
+        this.search(keyword)
     }
 }
