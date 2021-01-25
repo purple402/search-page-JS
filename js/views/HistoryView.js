@@ -21,6 +21,7 @@ HistoryView.getHistoryListHtml = function(data) {
         html += `<li data-keyword='${item.keyword}'>
         ${item.keyword}
         <span class="date">${item.date}</span>
+        <button class="btn-reset"></button>
         </li>`
         return html
     }, '<ul class="list">') + '</ul>'
