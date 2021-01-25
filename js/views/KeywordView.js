@@ -23,7 +23,7 @@ KeywordView.getKeywordListHtml = function(data) {
         ${item.keyword}
         </li>`
         return html
-    }, '<ul>') + '</ul>'
+    }, '<ul class="list">') + '</ul>'
 }
 
 KeywordView.bindClickEvent = function() {
