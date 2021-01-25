@@ -26,6 +26,7 @@ export default {
 
         HistoryView.setup(document.querySelector("#search-history"))
             .on('@click', e => this.onClickHistory(e.detail.keyword))
+            .on('@remove', e => this.onRemoveHistory(e.detail.keyword))
 
         this.selectedTab = '추천 검색어'
         this.renderView()
@@ -37,7 +38,7 @@ export default {
             this.fetchSearchKeyword()
             HistoryView.hide()
         } else {
-            this.fetchHistoryKeyword()
+            this.fetchSearchHistory()
             KeywordView.hide()
         }
 
@@ -48,9 +49,9 @@ export default {
             KeywordView.render(data)
         })
     },
-    fetchHistoryKeyword() {
+    fetchSearchHistory() {
         HistoryModel.list().then(data => {
-            HistoryView.render(data)
+            HistoryView.render(data).bindClickEvent()
         })
     },
     search(query) {
@@ -60,6 +61,7 @@ export default {
         })
         // 입력창에 단어가 입력될 수 있도록 FormView에 위임
         FormView.setValue(query)
+        HistoryModel.add(query)
     },
     onSubmit(input) {
         // 검색요청
@@ -86,5 +88,9 @@ export default {
     },
     onClickHistory(keyword) {
         this.search(keyword)
+    },
+    onRemoveHistory(keyword) {
+        HistoryModel.remove(keyword)
+        this.fetchSearchHistory()
     }
 }
