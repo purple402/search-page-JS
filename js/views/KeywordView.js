@@ -4,13 +4,17 @@ const tag = '[KeywordView]'
 
 const KeywordView = Object.create(View)
 
+KeywordView.messages = {
+    NO_KEYWORDS: '추천 검색어가 없습니다'
+  }
+
 KeywordView.setup = function(el) {
     this.init(el)
     return this
 }
 
 KeywordView.render = function(data = []) {
-    this.el.innerHTML = data.length ? this.getKeywordListHtml(data) : '추천 검색어가 없습니다'
+    this.el.innerHTML = data.length ? this.getKeywordListHtml(data) : this.messages.NO_KEYWORDS
     // setup에서 bindClickEvent를 하면 DOM이 만들어지기 이전이므로 eventlistener가 연결되지 않는다
     this.bindClickEvent()
     this.show()
