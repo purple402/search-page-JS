@@ -26,12 +26,19 @@ export default {
     },
     renderView() {
         TabView.setActiveTab(this.selectedTab)
+
         if (this.selectedTab === '추천 검색어') {
-            KeywordModel.list().then(data => {
-                KeywordView.render(data)
-            })
+            this.fetchSearchKeyword()
+        } else {
+
         }
+
         ResultView.hide()
+    },
+    fetchSearchKeyword() {
+        KeywordModel.list().then(data => {
+            KeywordView.render(data)
+        })
     },
     search(query) {
         //data 받아옴

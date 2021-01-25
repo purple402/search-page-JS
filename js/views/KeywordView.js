@@ -10,21 +10,20 @@ KeywordView.setup = function(el) {
 }
 
 KeywordView.render = function(data = []) {
-    this.el.innerHTML = this.getKeywordListHtml(data)
+    this.el.innerHTML = data.length ? this.getKeywordListHtml(data) : '추천 검색어가 없습니다'
+    this.show()
 }
 
 KeywordView.getKeywordListHtml = function(data) {
     return data.reduce((html, item, index) => {
-        html += this.getKeywordItemHtml(item, index)
+        html += `<li data-keyword='${item.keyword}'>
+        <span class='number'>${index + 1}</span>
+        ${item.keyword}
+        </li>`
         return html
     }, '<ul>') + '</ul>'
 }
 
-KeywordView.getKeywordItemHtml = function (item, index) {
-    return `<li>
-    <span class='number'>${index + 1}</span>
-    ${item.keyword}
-    </li>`
 }
 
 export default KeywordView
