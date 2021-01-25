@@ -18,6 +18,7 @@ KeywordView.render = function(data = []) {
     // setup에서 bindClickEvent를 하면 DOM이 만들어지기 이전이므로 eventlistener가 연결되지 않는다
     this.bindClickEvent()
     this.show()
+    return this
 }
 
 KeywordView.getKeywordListHtml = function(data) {
