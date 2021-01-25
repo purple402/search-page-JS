@@ -1,22 +1,12 @@
-import View from './View.js'
+import KeywordView from './KeywordView.js'
 
 const tag = '[HistoryView]'
 
-const HistoryView = Object.create(View)
+const HistoryView = Object.create(KeywordView)
 
-HistoryView.setup = function(el) {
-    this.init(el)
-    return this
-}
+HistoryView.messages.NO_KEYWORDS = '검색 이력이 없습니다'
 
-HistoryView.render = function(data = []) {
-    this.el.innerHTML = data.length ? this.getHistoryListHtml(data) : '최근 검색어가 없습니다'
-    // setup에서 bindClickEvent를 하면 DOM이 만들어지기 이전이므로 eventlistener가 연결되지 않는다
-    this.bindClickEvent()
-    this.show()
-}
-
-HistoryView.getHistoryListHtml = function(data) {
+HistoryView.getKeywordListHtml = function(data) {
     return data.reduce((html, item) => {
         html += `<li data-keyword='${item.keyword}'>
         ${item.keyword}
@@ -28,14 +18,14 @@ HistoryView.getHistoryListHtml = function(data) {
 }
 
 HistoryView.bindClickEvent = function() {
-    Array.from(this.el.querySelectorAll('li')).forEach(li => {
-        li.addEventListener('click', e => this.onClickHistory(e))
+    Array.from(this.el.querySelectorAll('button.btn-reset')).forEach(btn => {
+        btn.addEventListener('click', e => this.onRemoveHistory(e))
     })
 }
 
-HistoryView.onClickHistory = function(e) {
-    const {keyword} = e.currentTarget.dataset
-    this.emit('@click', {keyword})
+HistoryView.onRemoveHistory = function(e){
+    const {keyword} = e.currentTarget.parentElement.dataset
+    this.emit('@remove', {keyword})
 }
 
 export default HistoryView
