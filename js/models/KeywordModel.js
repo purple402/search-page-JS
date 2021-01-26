@@ -2,7 +2,7 @@ export default {
   data: [
     {keyword: '심플'}, 
     {keyword: '6공'}, 
-    {keyword: '스터디플래너'}, 
+    {keyword: '스터디'}, 
     {keyword: '제본'}
   ],
 
