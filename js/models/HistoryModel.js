@@ -12,12 +12,15 @@ export default {
   add(keyword = '') {
     keyword = keyword.trim()
     if (!keyword) return 
+
     // 기존에 있으면 삭제 후 새로운 날짜로 저장하게함
     if (this.data.some(item => item.keyword === keyword)) {
       this.remove(keyword)
     }
-
-    const date = '12.31'
+    const today = new Date()
+    const month = today.getMonth() +1 
+    const day = today.getDate();
+    const date = `${month}.${day}`
     this.data = [{keyword, date}, ...this.data]
   },
   
