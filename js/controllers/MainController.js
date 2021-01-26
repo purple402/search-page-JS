@@ -51,7 +51,7 @@ export default {
     },
     fetchSearchHistory() {
         HistoryModel.list().then(data => {
-            HistoryView.render(data).bindClickEvent()
+            HistoryView.render(data).bindRemoveBtn()
         })
     },
     search(query) {

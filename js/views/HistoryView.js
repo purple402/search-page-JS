@@ -17,9 +17,13 @@ HistoryView.getKeywordListHtml = function(data) {
     }, '<ul class="list">') + '</ul>'
 }
 
-HistoryView.bindClickEvent = function() {
+HistoryView.bindRemoveBtn = function() {
     Array.from(this.el.querySelectorAll('button.btn-reset')).forEach(btn => {
-        btn.addEventListener('click', e => this.onRemoveHistory(e))
+        btn.addEventListener('click', e => {
+            // li 의 클릭 이벤트 막음
+            e.stopPropagation()
+            this.onRemoveHistory(e)
+        })
     })
 }
 
