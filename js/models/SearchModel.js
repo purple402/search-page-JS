@@ -15,10 +15,16 @@ const data = [
 
 export default {
   list(query) {
-    return new Promise(res => {
+    return new Promise(resolve => {
       setTimeout(()=> {
-        //연습 - data 전체를 넘겨줌
-        res(data)
+        const keyword = query.trim()
+        const result = []
+        data.forEach(item => {
+          if (item.name.includes(keyword)) {
+            result.push(item)
+          }
+        })
+        resolve(result)
       }, 200);
     })
   }
