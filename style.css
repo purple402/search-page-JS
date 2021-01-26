@@ -126,3 +126,11 @@ li .date {
   top: 15px;
   right: 10px;
 }
+
+#search-result .noResult {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  height: 130px;
+}

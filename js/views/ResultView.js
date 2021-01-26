@@ -15,7 +15,7 @@ ResultView.setup = function(el) {
 
 ResultView.render = function(data = []) {
     console.log(tag, 'render()')
-    this.el.innerHTML = data.length ? this.getSearchResultHtml(data) : this.message.NO_RESULT
+    this.el.innerHTML = data.length ? this.getSearchResultHtml(data) : `<span class="noResult"> ${this.message.NO_RESULT} </span>`
     this.show()
 }
 
