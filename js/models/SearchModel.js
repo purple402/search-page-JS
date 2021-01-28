@@ -43,5 +43,23 @@ export default {
         resolve(result)
       }, 200);
     })
+  },
+  check(checkedList) {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        let checkData = data.slice()
+        let result = []
+        result[0] = checkData
+        checkedList.forEach((list, index) => {
+          result[index + 1] = []
+          result[index].forEach(item => {
+              if (item.tag.includes(list)) {
+                result[index+1].push(item)
+              }
+            })
+          }) 
+        resolve(result[checkedList.length])
+        }, 200)
+      })
   }
 }
