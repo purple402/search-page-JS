@@ -3,6 +3,7 @@ import ResultView from '../views/ResultView.js'
 import TabView from '../views/TabView.js'
 import KeywordView from '../views/KeywordView.js'
 import HistoryView from '../views/HistoryView.js'
+import CategoryView from '../views/CategoryView.js'
 
 import SearchModel from '../models/SearchModel.js'
 import KeywordModel from '../models/KeywordModel.js'
@@ -27,6 +28,9 @@ export default {
         HistoryView.setup(document.querySelector("#search-history"))
             .on('@click', e => this.onClickHistory(e.detail.keyword))
             .on('@remove', e => this.onRemoveHistory(e.detail.keyword))
+
+        CategoryView.setup(document.querySelector('#categories'))
+            .on('@check', e => this.onCheckCategory(e.detail.CATName))
 
         this.selectedTab = '추천 검색어'
         this.renderView()
