@@ -1,5 +1,7 @@
 body,
-ul {
+ul,
+h3,
+h4 {
   margin: 0;
   padding: 0;
 }
@@ -16,6 +18,10 @@ header {
   text-align: center;
 }
 
+h3 {
+  margin: 20px 0px;
+}
+
 .container {
   margin: 0px 15px;
 }
@@ -28,7 +34,7 @@ input[type="text"] {
   width: 100%;
   box-sizing: border-box;
   padding: 15px;
-  margin: 15px 0px;
+  margin-bottom: 15px;
   font-size: 15px;
   border: 1px solid rgba(0, 0, 0, 0.3);
 }
@@ -38,7 +44,7 @@ input[type="text"] {
   width: 21px;
   height: 21px;
   border-radius: 50%;
-  top: 30px;
+  top: 60px;
   right: 10px;
   background-color: rgba(0, 0, 0, 0.3);
   color: white;
@@ -82,6 +88,9 @@ ul .active {
 li {
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   position: relative;
+}
+
+.list li {
   padding: 0px 15px;
 }
 
@@ -133,4 +142,25 @@ li .date {
   align-items: center;
   box-sizing: border-box;
   height: 130px;
+}
+
+.category {
+  display: flex;
+}
+
+.category h4 {
+  margin: 10px;
+}
+
+.subCategory {
+  display: flex;
+  align-items: center;
+  overflow: scroll;
+}
+
+.subCategory li {
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  white-space: nowrap;
 }

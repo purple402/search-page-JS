@@ -9,11 +9,12 @@
 </head>
 <body>
     <header>
-        <h2 class='container'>검색</h2>
+        <h2 class='container'>다이어리</h2>
     </header>
     
     <div class="container">
         <form>
+            <h3>이름으로 검색하기</h3>
             <input type="text" placeholder="검색어를 입력하세요" autofocus>
             <button type="reset" class="btn-reset"></button>
         </form>
@@ -31,6 +32,105 @@
             </div>
             <div id="search-result">
                 <!-- 검색 결과 -->
+            </div>
+        </div>
+        
+        <h3>키워드로 검색하기</h3>
+        <div class='content'>
+            <div id='categories'>
+                <div class="category">
+                    <h4>날짜형식</h4>
+                    <ul class="subCategory">
+                        <li class="keywordList">
+                            <input class="keyword_check invisible" type="checkbox" id="2021 날짜형">
+                            <label for="2021 날짜형">2021 날짜형</label>
+                        </li>
+                        <li class="keywordList">
+                            <input class="keyword_check invisible" type="checkbox" id="만년형">
+                            <label for="만년형">만년형</label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="category">
+                    <h4>내지구성</h4>
+                    <ul class="subCategory">
+                        <li class="keywordList">
+                            <input class="keyword_check invisible" type="checkbox" id="월간">
+                            <label for="월간">월간</label>
+                        </li>
+                        <li class="keywordList">
+                            <input class="keyword_check invisible" type="checkbox" id="주간">
+                            <label for="주간">주간</label>
+                        </li>
+                        <li class="keywordList">
+                            <input class="keyword_check invisible" type="checkbox" id="일간">
+                            <label for="일간">일간</label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="category">
+                    <h4>기간</h4>
+                    <ul class="subCategory">
+                        <li class="keywordList">
+                            <input class="keyword_check invisible" type="checkbox" id="1년">
+                            <label for="1년">1년</label>
+                        </li>
+                        <li class="keywordList">
+                            <input class="keyword_check invisible" type="checkbox" id="6개월">
+                            <label for="6개월">6개월</label>
+                        </li>
+                        <li class="keywordList">
+                            <input class="keyword_check invisible" type="checkbox" id="3개월">
+                            <label for="3개월">3개월</label>
+                        </li>
+                        <li class="keywordList">
+                            <input class="keyword_check invisible" type="checkbox" id="1개월">
+                            <label for="1개월">1개월</label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="category">
+                    <h4>커버</h4>
+                    <ul class="subCategory">
+                        <li class="keywordList">
+                            <input class="keyword_check invisible" type="checkbox" id="하드커버">
+                            <label for="하드커버">하드커버</label>
+                        </li>
+                        <li class="keywordList">
+                            <input class="keyword_check invisible" type="checkbox" id="소프트커버">
+                            <label for="소프트커버">소프트커버</label>
+                        </li>
+                        <li class="keywordList">
+                            <input class="keyword_check invisible" type="checkbox" id="PVC">
+                            <label for="PVC">PVC</label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="category">
+                    <h4>제본</h4>
+                    <ul class="subCategory">
+                        <li class="keywordList">
+                            <input class="keyword_check invisible" type="checkbox" id="양장">
+                            <label for="양장">양장</label>
+                        </li>
+                        <li class="keywordList">
+                            <input class="keyword_check invisible" type="checkbox" id="스프링">
+                            <label for="스프링">스프링</label>
+                        </li>
+                        <li class="keywordList">
+                            <input class="keyword_check invisible" type="checkbox" id="6공">
+                            <label for="6공">6공</label>
+                        </li>
+                        <li class="keywordList">
+                            <input class="keyword_check invisible" type="checkbox" id="메모지">
+                            <label for="메모지">메모지</label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="category-result">
+                <!-- 카테고리 검색 결과 -->
             </div>
         </div>
     
