@@ -4,6 +4,7 @@ import TabView from '../views/TabView.js'
 import KeywordView from '../views/KeywordView.js'
 import HistoryView from '../views/HistoryView.js'
 import CategoryView from '../views/CategoryView.js'
+import CategoryResultView from '../views/CategoryResultView.js'
 
 import SearchModel from '../models/SearchModel.js'
 import KeywordModel from '../models/KeywordModel.js'
@@ -31,6 +32,8 @@ export default {
 
         CategoryView.setup(document.querySelector('#categories'))
             .on('@check', e => this.onCheckCategory(e.detail.CATName))
+
+        CategoryResultView.setup(document.querySelector('#category-result'))
 
         this.selectedTab = '추천 검색어'
         this.renderView()
