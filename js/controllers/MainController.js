@@ -36,6 +36,7 @@ export default {
         CategoryResultView.setup(document.querySelector('#category-result'))
 
         this.selectedTab = '추천 검색어'
+        this.checkedCATList = []
         this.renderView()
     },
     renderView() {
@@ -99,5 +100,17 @@ export default {
     onRemoveHistory(keyword) {
         HistoryModel.remove(keyword)
         this.fetchSearchHistory()
+    },
+    onCheckCategory(CATName) {
+        // 중복 확인
+        if (this.checkedCATList.some(item => item === CATName)) {
+            this.checkedCATList = this.checkedCATList.filter(item => item !== CATName)
+        } else {
+            this.checkedCATList.push(CATName)
+        }
+
+        SearchModel.check(this.checkedCATList).then(data => {
+            CategoryResultView.render(data)
+        })
     }
 }
