@@ -150,6 +150,7 @@ li .date {
 
 .category h4 {
   margin: 10px;
+  width: 70px;
 }
 
 .subCategory {
@@ -163,4 +164,8 @@ li .date {
   cursor: pointer;
   padding: 5px;
   white-space: nowrap;
+}
+
+.hide {
+  display: none;
 }
