@@ -38,14 +38,14 @@ const data = [
     id: 6,
     name: '바이풀디자인_기억보관함 라지_주간 2021',
     brand: 'BY.FULLDESIGN',
-    tag: ['2021날짜형', '월간', '주간', '1년', '소프트커버', '양장', '가름끈', '밴드', '120g'],
+    tag: ['2021 날짜형', '월간', '주간', '1년', '소프트커버', '양장', '가름끈', '밴드', '120g'],
     image: 'http://thumbnail.10x10.co.kr/webimage/image/basic600/322/B003228816-2.jpg?cmd=thumb&w=500&h=500&fit=true&ws=false'
   },
   {
     id: 7,
     name: '2021 Classy Gentle Diary',
     brand: 'PLEPIC',
-    tag: ['2021날짜형', '월간', '주간', '1년', 'PVC커버', '6공', '체크리스트', '120g'],
+    tag: ['2021 날짜형', '월간', '주간', '1년', 'PVC커버', '6공', '체크리스트', '120g'],
     image: 'http://thumbnail.10x10.co.kr/webimage/image/basic600/326/B003260024.jpg?cmd=thumb&w=500&h=500&fit=true&ws=false'
   },
   {
