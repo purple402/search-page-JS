@@ -15,8 +15,17 @@ ResultView.setup = function(el) {
 
 ResultView.render = function(data = []) {
     console.log(tag, 'render()')
-    this.el.innerHTML = data.length ? this.getSearchResultHtml(data) : `<span class="noResult"> ${this.message.NO_RESULT} </span>`
+    // this.el.innerHTML = data.length ? this.getSearchResultHtml(data) : `<span class="noResult"> ${this.message.NO_RESULT} </span>`
+    this.el.innerHTML = data.length ? this.shuffleData(data) : `<span class="noResult"> ${this.message.NO_RESULT} </span>`
     this.show()
+}
+
+ResultView.shuffleData = function(data) {
+    for (let i = data.length -1 ; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [data[i], data[j]] = [data[j], data[i]];
+    }
+    return this.getSearchResultHtml(data)
 }
 
 ResultView.getSearchResultHtml = function(data) {
@@ -27,7 +36,6 @@ ResultView.getSearchResultHtml = function(data) {
 }
 
 ResultView.getSearchItemHtml = function(item) {
-    console.log(tag, 'getSearchItemHtml()')
     return `<li>
     <img src='${item.image}'>
     <div>
