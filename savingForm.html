@@ -12,11 +12,11 @@
         <div class="container">
             <h3>키워드로 저장하기</h3>
             <div class='content'>
+                이름 : <input type="text" id="name">
+                Brand : <input type="text" id="brand">
+                image : <input type="text" id="image">
+                link : <input type="text" id="link">
                 <div id='categories'>
-                    이름 : <input type="text" width="10px">
-                    Brand : <input type="text">
-                    image : <input type="text">
-                    link : <input type="text">
                     <div class="category">
                         <h4>날짜형식</h4>
                         <ul class="subCategory">
@@ -168,16 +168,31 @@
                 </div>
             </div>
         </div>
-        <button type="button" id="convertBtn" onclick="convertInfoToData()">Convert Info to Data</button>
-        <button type="button" id="resetBtn" onclick="resetInfo()">Reset Info</button>
+        <button type="button" id="convertBtn">Convert Info to Data</button>
+        <button type="button" id="resetBtn">Reset Info</button>
     </form>
-    <div id="output">File Contents Area</div>
+    <div id="output">Converted Data Area</div>
+    <button type="button" id="copyBtn" onclick="copyText()">COPY</button>
 </body>
 <script>
+    const name = document.querySelector('#name');
+    const brand = document.querySelector('#brand');
+    const image = document.querySelector('#image');
+    const link = document.querySelector('#link');
+    const categoryList = document.querySelectorAll('.keyword_check');
+    const convertBtn = document.querySelector('#convertBtn');
+    const resetBtn = document.querySelector("#resetBtn");
+    const output = document.querySelector('#output');
+
+    convertBtn.addEventListener('click', convertInfoToData);
+    resetBtn.addEventListener('click', resetInfo);
+    Array.from(categoryList).forEach(list => list.addEventListener('click', e => onCheckList(e.target.id)));
+ 
     let checkedItems = [];
 
     function onCheckList(CATName) {
         // 이미 포함되어 있는지 확인함
+        
         if(checkedItems.some(item => item === CATName)) {
             checkedItems = checkedItems.filter(item => item !== CATName);
         } else {
@@ -186,22 +201,34 @@
         console.log('checkedItems', checkedItems);
     }
 
-    const categoryList = document.querySelectorAll('input');
-    Array.from(categoryList).forEach(list => list.addEventListener('click', e => onCheckList(e.target.id)));
 
     function convertInfoToData() {
-        document.querySelector('#output').innerHTML = ``;
+        let newCheckedItems = checkedItems.reduce((data, item) => {
+            data += `'${item}', `
+            return data;
+        }, []);
+        
+        output.innerHTML = `{name : '${name.value || '❗ 이름을 입력해 주세요'}',</br>
+        brand : '${brand.value || '❗ 브랜드를 입력해 주세요'}',</br>
+        image : '${image.value || '❗ image를 입력해 주세요'}',</br>
+        link : '${link.value || '❗ link를 입력해 주세요'}',</br>
+        tag : [${newCheckedItems}]}`;
     }
 
     function resetInfo() {
         document.querySelector('form').reset();
         checkedItems =[];
-        console.log('resetInfo', checkedItems)
+        output.innerHTML = 'Converted Data Area';
+        console.log('resetInfo', checkedItems);
     }
 
-    // const convertBtn = document.querySelector('#convertBtn');
-    // convertBtn.addEventListener('click', convertInfoToData());
-    // const resetBtn = document.querySelector("#resetBtn");
-    // resetBtn.addEventListener('click', e =>resetInfo(e));
+    function copyText() {
+        console.log('copyText')
+    }
+
+
+
+
+
 </script>
 </html>
