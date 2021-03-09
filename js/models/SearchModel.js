@@ -1,10 +1,11 @@
 const data = [
   {
     id: 1,
-    name: '2021 마이 버디 01-03 (날짜형)',
+    name: '2021 마이 버디',
     brand: 'DAILYLIKE',
-    tag: ['2021 날짜형', '월간', '주간', '1년', '양장', '소프트커버', 'PVC커버포함'],
-    image: 'http://thumbnail.10x10.co.kr/webimage/image/basic600/326/B003268412.jpg?cmd=thumb&w=500&h=500&fit=true&ws=false'
+    tag: ['2021 날짜형', '월간', '주간', '1년', '양장', '소프트커버','100g', 'B6', 'PVC커버포함'],
+    image: 'http://www.dailylike.co.kr/shop/image_view.html?scroll=yes&image=/shopimages/e2co/023004000295.jpg',
+    link: 'http://www.dailylike.co.kr/shop/shopdetail.html?branduid=1415314&xcode=002&mcode=003&scode=001&type=Y&sort=order&cur_code=002003001&GfDT=amh3WQ%3D%3D'
   },
   {
     id: 2,
