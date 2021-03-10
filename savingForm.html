@@ -175,6 +175,7 @@
     <button type="button" id="copyBtn" onclick="copyText()">COPY</button>
 </body>
 <script>
+    const number = document.querySelector('#id_number');
     const name = document.querySelector('#name');
     const brand = document.querySelector('#brand');
     const image = document.querySelector('#image');
@@ -208,10 +209,11 @@
             return data;
         }, []);
         
-        output.innerHTML = `{name : '${name.value || '❗ 이름을 입력해 주세요'}',</br>
-        brand : '${brand.value || '❗ 브랜드를 입력해 주세요'}',</br>
-        image : '${image.value || '❗ image를 입력해 주세요'}',</br>
-        link : '${link.value || '❗ link를 입력해 주세요'}',</br>
+        output.innerHTML = `{id : ${number.value || '❗'},
+        name : '${name.value || '❗ 이름을 입력해 주세요'}',
+        brand : '${brand.value || '❗ 브랜드를 입력해 주세요'}',
+        image : '${image.value || '❗ image를 입력해 주세요'}',
+        link : '${link.value || '❗ link를 입력해 주세요'}',
         tag : [${newCheckedItems}]}`;
     }
 
