@@ -223,7 +223,24 @@
     }
 
     function copyText() {
-        console.log('copyText')
+        let text = document.createElement("textarea");
+        document.body.appendChild(text);
+        text.value = output.innerHTML;
+        text.select();
+        document.execCommand("copy");
+        document.body.removeChild(text);
+        alert("COPY");
+
+        // let text = output.innerHTML;
+        // let createInput = document.createElement('input');
+        // createInput.setAttribute("type", "text");
+        // output.appendChild(createInput);
+        // createInput = text;
+        // createInput.select();
+        // document.execCommand('copy');
+        // output.removeChild(createInput);
+        // alert('복사가 완료되었습니다.')
+        // console.log('copyText')
     }
 
 
