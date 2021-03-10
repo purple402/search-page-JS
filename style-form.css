@@ -1,0 +1,169 @@
+body,
+ul,
+h3,
+h4 {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+img {
+  width: 100%;
+}
+
+header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  padding: 15px 0px;
+  text-align: center;
+}
+
+h3 {
+  margin: 20px 0px;
+}
+
+.container {
+  margin: 0px 15px;
+}
+
+form {
+  position: relative;
+}
+
+input[type="text"] {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+  font-size: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.btn-reset {
+  position: absolute;
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  top: 60px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  border: none;
+  padding: 1px;
+}
+
+.btn-reset:before {
+  font-size: 13px;
+  content: "✖";
+}
+
+.content {
+  border: 1px solid #ccc;
+}
+
+ul.tabs {
+  display: flex;
+}
+
+.tabs li {
+  display: inline-block;
+  width: 50%;
+  padding: 15px;
+  text-align: center;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #999;
+}
+
+ul .active {
+  background-color: #37c1bc;
+  color: white;
+}
+
+.result li {
+  display: flex;
+  padding: 5px 0px;
+}
+
+li {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.list li {
+  padding: 0px 15px;
+}
+
+.result img {
+  width: 120px;
+  height: 120px;
+  margin: 0px 5px;
+}
+
+.result div {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 5px;
+}
+
+.result span {
+  word-break: keep-all;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.list li {
+  display: flex;
+  height: 50px;
+  align-items: center;
+}
+
+li .number {
+  font-size: 20px;
+  margin: 10px 15px 10px 10px;
+  color: gray;
+}
+
+li .date {
+  font-size: 15px;
+  position: absolute;
+  right: 50px;
+  color: gray;
+}
+
+.list .btn-reset {
+  top: 15px;
+  right: 10px;
+}
+
+.result .noResult {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  height: 130px;
+}
+
+.category {
+  display: flex;
+}
+
+.category h4 {
+  margin: 10px;
+  width: 70px;
+}
+
+.subCategory {
+  display: flex;
+  align-items: center;
+}
+
+.subCategory li {
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  white-space: nowrap;
+}
+
+.hide {
+  display: none;
+}
