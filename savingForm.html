@@ -8,11 +8,11 @@
     <title>Document</title>
 </head>
 <body>
-    <form>
         <div class="container">
             <h3>키워드로 저장하기</h3>
             <div class='content'>
                 <table>
+                    <form id="input_text">
                     <tr>
                         <td><h4>id</h4></td>
                         <td><input type="text" id="id_number"></td>
@@ -33,6 +33,8 @@
                         <td><h4>link</h4></td>
                         <td><input type="text" id="link"></td>
                     </tr>
+                </form>
+                <form id="input_check">
                     <tr>
                         <td><h4>날짜형식</h4></td>
                         <td><ul class="subCategory">
@@ -345,11 +347,13 @@
     <button type="button" id="copyBtn" onclick="copyText()">COPY</button>
 </body>
 <script>
+    const textInput = document.querySelector("#input_text")
     const number = document.querySelector('#id_number');
     const name = document.querySelector('#name');
     const brand = document.querySelector('#brand');
     const image = document.querySelector('#image');
     const link = document.querySelector('#link');
+    const checkInput = document.querySelector("#input_check")
     const categoryList = document.querySelectorAll('.keyword_check');
     const convertBtn = document.querySelector('#convertBtn');
     const resetBtn = document.querySelector("#resetBtn");
