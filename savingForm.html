@@ -341,6 +341,7 @@
             </div>
         </div>
         <button type="button" id="convertBtn">Convert Info to Data</button>
+        <button type="button" id="resetCheckBtn">Reset CheckBox</button>
         <button type="button" id="resetBtn">Reset Info</button>
     </form>
     <div id="output">Converted Data Area</div>
@@ -356,10 +357,12 @@
     const checkInput = document.querySelector("#input_check")
     const categoryList = document.querySelectorAll('.keyword_check');
     const convertBtn = document.querySelector('#convertBtn');
+    const resetCheckBtn = document.querySelector("#resetCheckBtn");
     const resetBtn = document.querySelector("#resetBtn");
     const output = document.querySelector('#output');
 
     convertBtn.addEventListener('click', convertInfoToData);
+    resetCheckBtn.addEventListener('click', resetCheckInfo);
     resetBtn.addEventListener('click', resetInfo);
     Array.from(categoryList).forEach(list => list.addEventListener('click', e => onCheckList(e.target.id)));
  
@@ -389,10 +392,16 @@
         image : '${image.value || '❗ image를 입력해 주세요'}',
         link : '${link.value || '❗ link를 입력해 주세요'}',
         tag : [${newCheckedItems}]}`;
+    function resetCheckInfo() {
+        checkInput.reset();
+        checkedItems =[];
+        output.innerHTML = 'Converted Data Area';
+        console.log('resetCheckInfo', checkedItems);
     }
 
     function resetInfo() {
-        document.querySelector('form').reset();
+        textInput.reset();
+        checkInput.reset();
         checkedItems =[];
         output.innerHTML = 'Converted Data Area';
         console.log('resetInfo', checkedItems);
